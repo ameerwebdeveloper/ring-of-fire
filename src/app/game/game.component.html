@@ -1,0 +1,68 @@
+<app-player
+  id="player-component"
+  *ngFor="let player of game.players; let i = index"
+  [playerActive]="i === game.currentPlayer"
+  [name]="player"
+  [imageIndex]="randomNumbers[i]"
+  [ngStyle]="{ 'top.px': 100 + i * 130 }"
+></app-player>
+
+<div class="game-field" id="game-field">
+  <div class="card-stack">
+    <!-- card stack -->
+    <img
+      *ngFor="let c of [1, 2, 3, 4, 5]; let i = index"
+      [ngStyle]="{ 'right.px': i * 5 }"
+      src="assets/cards/card_cover.png"
+      alt="image{{ i }}"
+    />
+
+    <!-- TOP CARD-->
+    <img
+      (click)="takeCard()"
+      class="top-card"
+      src="assets/cards/card_cover.png"
+      alt=""
+    />
+
+    <!-- played cards -->
+    <img
+      *ngFor="let card of game.playedCards"
+      src="assets/cards/{{ card }}.png"
+      alt=""
+      class="played-card"
+      [ngStyle]="{ 'right.px': 25 }"
+    />
+
+    <!-- PICKED TOP CARD -->
+    <img
+      (click)="takeCard()"
+      *ngIf="pickCardAnimation"
+      [ngStyle]="{ 'right.px': 25 }"
+      class="pick-card"
+      src="assets/cards/{{ currentCard }}.png"
+      alt=""
+    />
+  </div>
+</div>
+
+
+
+<app-game-info [cardName]="currentCard"></app-game-info>
+
+<button class="btn-add" mat-fab color="primary" (click)="openDialog()">
+  <mat-icon >add</mat-icon>
+</button>
+
+
+<div  class="no-player-worning" *ngIf="!game.players.length">
+    <div>
+        <h1>There are no players</h1>
+        <button mat-button (click)="backToStartPage()">Zurück</button>
+        <button mat-raised-button color="primary" (click)="openDialog()">Add player</button>
+    </div>
+</div>
+
+
+
+

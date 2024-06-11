@@ -1,0 +1,30 @@
+.start-screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/bgImg/board-HBMDDQQM.jpg");
+    
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    img{
+       height: 99vh;
+    }
+}
+
+.start-lable-box{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 150px;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 40vw;
+        height: auto;
+        &:hover{
+            filter: brightness(1.2);
+            cursor: pointer;
+        }
+    }
+}

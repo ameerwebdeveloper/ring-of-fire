@@ -1,0 +1,36 @@
+.player-box {
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    width: 360px;
+    border-top-left-radius: 65px;
+    border-bottom-left-radius: 65px;
+
+
+    img{
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        clip-path: circle();
+        border: solid 5px transparent;
+       
+    }
+    span{
+        font-size: 28px;
+        padding-left: 15px;
+    }
+}
+
+.img-box{
+       
+        background-color: red;
+    
+}
+
+
+.player-active{
+   img{
+         border: solid 5px green;
+   }
+}

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+   
+}
+
+
+@mixin flexBoxRow($justify: center, $align: center){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  @mixin flexBoxColumn($justify: center, $align: center){
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
